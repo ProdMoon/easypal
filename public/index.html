@@ -19,6 +19,7 @@
 </head>
 <body>
     <button onclick="sendCommand('ps -ef | grep Pal')">Grep Pal</button>
-    <!-- Add more buttons for different commands -->
+    <button onclick="sendCommand('nohup ~/.steam/SteamApps/common/PalServer/PalServer.sh &')">Run PalServer</button>
+    <button onclick="sendCommand('killall PalServer-Linux-Test')">Kill PalServer</button>
 </body>
 </html>
