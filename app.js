@@ -11,6 +11,14 @@ app.post("/execute-command", (req, res) => {
 
   // Validate and sanitize the command before executing
   // IMPORTANT: Implement proper validation and security checks here
+  const allowedCommands = [
+    "ps -ef | grep Pal",
+    "nohup ~/.steam/SteamApps/common/PalServer/PalServer.sh &",
+    "killall PalServer-Linux-Test",
+  ];
+  if (!allowedCommands.includes(command)) {
+    return res.status(400).send("Invalid command");
+  }
 
   exec(command, (error, stdout, stderr) => {
     if (error) {
