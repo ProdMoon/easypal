@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ubuntu Controller</title>
+    <script>
+        function sendCommand(command) {
+            fetch('/execute-command', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ command }),
+            })
+            .then(response => response.text())
+            .then(data => alert(data))
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</head>
+<body>
+    <button onclick="sendCommand('ps -ef | grep Pal')">Grep Pal</button>
+    <!-- Add more buttons for different commands -->
+</body>
+</html>
