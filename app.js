@@ -13,7 +13,7 @@ app.post("/execute-command", (req, res) => {
   // IMPORTANT: Implement proper validation and security checks here
   const allowedCommands = [
     "ps -ef | grep Pal",
-    "nohup ~/.steam/SteamApps/common/PalServer/PalServer.sh &",
+    "nohup ~/.steam/SteamApps/common/PalServer/PalServer.sh &> /dev/null &",
     "killall PalServer-Linux-Test",
   ];
   if (!allowedCommands.includes(command)) {
