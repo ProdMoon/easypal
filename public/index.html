@@ -1,25 +1,14 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Ubuntu Controller</title>
-    <script>
-        function sendCommand(command) {
-            fetch('/execute-command', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ command }),
-            })
-            .then(response => response.text())
-            .then(data => alert(data))
-            .catch(error => console.error('Error:', error));
-        }
-    </script>
-</head>
-<body>
-    <button onclick="sendCommand('ps -ef | grep Pal')">Grep Pal</button>
-    <button onclick="sendCommand('nohup ~/.steam/SteamApps/common/PalServer/PalServer.sh &> /dev/null &')">Run PalServer</button>
-    <button onclick="sendCommand('killall PalServer-Linux-Test')">Kill PalServer</button>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/cattiva.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyPal</title>
+    <script type="module" crossorigin src="/assets/index-ZEGNDXcX.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-T96a2aIM.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
 </html>
